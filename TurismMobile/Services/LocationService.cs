@@ -20,9 +20,18 @@ namespace TurismMobile.Services
 
         public async Task<List<TravelLocation>> GetAllLocationsAsync()
         {
-            return await _context.TravelLocations
+            var locations = await _context.TravelLocations
                 .Include(l => l.Tours)
                 .ToListAsync();
+
+            foreach (var location in locations)
+            {
+                location.Tours = location.Tours
+                    .Where(t => t.IsAvailable && t.StartDate > DateTime.Now)
+                    .ToList();      
+            }
+
+            return locations;
         }
 
         public async Task<TravelLocation?> GetLocationByIdAsync(int id)
