@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TurismMobile.Views.AddReservationPage"
+             Title="Rezervă Tur"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Detalii Rezervare" 
+                   FontSize="24" 
+                   FontAttributes="Bold"
+                   TextColor="#333333"/>
+
+            <Frame BackgroundColor="White" CornerRadius="15" HasShadow="True" Padding="20">
+                <VerticalStackLayout Spacing="8">
+                    <Label x:Name="TourTitleLabel" 
+                           FontSize="20" 
+                           FontAttributes="Bold"
+                           TextColor="#333333"/>
+                    <Label x:Name="TourLocationLabel" 
+                           FontSize="14"
+                           TextColor="#666666"/>
+                    <Label x:Name="TourDatesLabel" 
+                           FontSize="14"
+                           TextColor="#666666"/>
+                    <Label x:Name="TourPriceLabel" 
+                           FontSize="18" 
+                           FontAttributes="Bold"
+                           TextColor="#2196F3"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Număr de persoane:" FontSize="14" TextColor="#666666"/>
+            <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="15">
+                <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                    <Button Text="-" 
+                            Clicked="OnDecreaseClicked"
+                            BackgroundColor="#F44336"
+                            TextColor="White"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            CornerRadius="25"
+                            FontSize="20"
+                            FontAttributes="Bold"/>
+
+                    <Label x:Name="NumberOfPeopleLabel" 
+                           Text="1"
+                           FontSize="32"
+                           FontAttributes="Bold"
+                           TextColor="#333333"
+                           VerticalOptions="Center"
+                           WidthRequest="60"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Button Text="+" 
+                            Clicked="OnIncreaseClicked"
+                            BackgroundColor="#4CAF50"
+                            TextColor="White"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            CornerRadius="25"
+                            FontSize="20"
+                            FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="#E3F2FD" CornerRadius="10" HasShadow="True" Padding="20">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Preț total:" 
+                           FontSize="14"
+                           TextColor="#666666"/>
+                    <Label x:Name="TotalPriceLabel" 
+                           Text="0.00 RON"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="#2196F3"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label x:Name="ErrorLabel" 
+                   Text="" 
+                   TextColor="Red" 
+                   IsVisible="False"
+                   FontSize="14"/>
+
+            <Button x:Name="ConfirmButton"
+                    Text="CONFIRMĂ REZERVAREA"
+                    Clicked="OnConfirmClicked"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="55"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Margin="0,10,0,0"/>
+
+            <Button Text="ANULEAZĂ"
+                    Clicked="OnCancelClicked"
+                    BackgroundColor="#9E9E9E"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    FontSize="16"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

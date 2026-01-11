@@ -31,11 +31,9 @@ namespace TurismMobile.Models
 
         public bool IsAvailable { get; set; } = true;
 
-        // Foreign Key
         [Required]
         public int LocationId { get; set; }
 
-        // Relații de navigare
         public TravelLocation? Location { get; set; }
         public List<Reservation> Reservations { get; set; } = new();
         public List<Review> Reviews { get; set; } = new();

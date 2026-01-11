@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using TurismMobile.Data;
 using TurismMobile.Services;
+using TurismMobile.Views;
 
 namespace TurismMobile
 {
@@ -30,6 +31,19 @@ namespace TurismMobile
             builder.Services.AddTransient<LocationService>();
             builder.Services.AddTransient<ReservationService>();
             builder.Services.AddTransient<ReviewService>();
+            builder.Services.AddTransient<NotificationService>();
+
+            builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddTransient<RegisterPage>();
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<ToursListPage>();
+            builder.Services.AddTransient<TourDetailsPage>();
+            builder.Services.AddTransient<AddEditTourPage>();
+            builder.Services.AddTransient<LocationsListPage>();
+            builder.Services.AddTransient<AddEditLocationPage>();
+            builder.Services.AddTransient<MyReservationsPage>();
+            builder.Services.AddTransient<AddReservationPage>();
+            builder.Services.AddTransient<AddEditReviewPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TurismMobile.Views.LocationsListPage"
+             Title="Locații"
+             BackgroundColor="#F5F5F5">
+
+    <Grid RowDefinitions="*,Auto" Padding="0">
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout x:Name="LocationsContainer" 
+                                 Padding="15" 
+                                 Spacing="15"/>
+        </ScrollView>
+
+        <Button x:Name="AddLocationButton"
+                Grid.Row="1"
+                Text="+ ADAUGĂ LOCAȚIE"
+                Clicked="OnAddLocationClicked"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                HeightRequest="50"
+                FontSize="16"
+                FontAttributes="Bold"
+                IsVisible="False"
+                Margin="15"/>
+
+    </Grid>
+</ContentPage>

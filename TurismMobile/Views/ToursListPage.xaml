@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TurismMobile.Views.ToursListPage"
+             Title="Tururi disponibile"
+             BackgroundColor="#F5F5F5">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="0">
+
+        <Frame Grid.Row="0" 
+               BackgroundColor="White" 
+               CornerRadius="0" 
+               HasShadow="True" 
+               Padding="15">
+            <SearchBar x:Name="SearchBar" 
+                       Placeholder="Caută tur..."
+                       PlaceholderColor="#999999"
+                       TextColor="#333333"
+                       BackgroundColor="White"
+                       SearchButtonPressed="OnSearchClicked"
+                       TextChanged="OnSearchTextChanged"/>
+        </Frame>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout x:Name="ToursContainer" 
+                                 Padding="15" 
+                                 Spacing="15"/>
+        </ScrollView>
+
+        <Button x:Name="AddTourButton"
+                Grid.Row="2"
+                Text="+ ADAUGĂ TUR NOU"
+                Clicked="OnAddTourClicked"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                HeightRequest="50"
+                FontSize="16"
+                FontAttributes="Bold"
+                IsVisible="False"
+                Margin="15"/>
+
+    </Grid>
+</ContentPage>
+
+
+
+
+
+
+    

@@ -47,11 +47,19 @@ namespace TurismMobile.Services
         }
 
         public async Task<bool> AddReservationAsync(Reservation reservation)
-        {
-            reservation.BookingDate = DateTime.UtcNow;
-            _context.Reservations.Add(reservation);
-            return await _context.SaveChangesAsync() > 0;
-        }
+{
+    reservation.BookingDate = DateTime.UtcNow;
+    _context.Reservations.Add(reservation);
+    var result = await _context.SaveChangesAsync() > 0;
+  
+   // if (result)
+   // {
+   //     var notificationService = new NotificationService(_context);
+   //     await notificationService.SendReservationConfirmationAsync(reservation.Id);
+   // }
+    
+    return result;
+}
 
         public async Task<bool> UpdateReservationAsync(Reservation reservation)
         {
